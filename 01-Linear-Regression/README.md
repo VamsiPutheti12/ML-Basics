@@ -331,33 +331,368 @@ SS_tot = Σ(yᵢ - ȳ)²   (total sum of squares)
 
 ---
 
-## 📈 Visualizations
+## 📈 Visualizations Explained
 
-Our implementation generates several visualizations to help you understand the algorithm:
+Our implementations generate several visualizations to help you understand Linear Regression. Here's a detailed explanation of each plot and the math behind it:
 
-### 1. Training Data and Best Fit Line
+---
+
+### 1. **Best Fit Line Plot**
+
 ![Best Fit Line](visualizations/best_fit_line.png)
-- Shows the original data points
-- Displays the learned regression line
-- Visualizes how well the line fits the data
 
-### 2. Cost Function Over Iterations
+**What it shows:**
+- Scatter plot of actual data points (blue/green dots)
+- The learned regression line (red line)
+- The equation of the line: y = wx + b
+
+**Mathematical Foundation:**
+
+The best fit line is determined by the parameters (w, b) that minimize the cost function:
+
+```
+Line equation: ŷ = wx + b
+
+Where:
+- w = learned weight (slope)
+- b = learned bias (intercept)
+- ŷ = predicted value
+```
+
+**How to interpret:**
+- **Close clustering**: Points near the line indicate good predictions
+- **Scattered points**: Points far from the line indicate poor fit
+- **Slope (w)**: Steeper line = stronger relationship
+- **Intercept (b)**: Where the line crosses the y-axis
+
+**What to look for:**
+✅ Points should cluster around the line  
+✅ No obvious curved patterns (would indicate non-linearity)  
+✅ Roughly equal scatter above and below the line  
+
+---
+
+### 2. **Cost Function Over Iterations**
+
 ![Cost Function](visualizations/cost_history.png)
-- Shows how the cost decreases during training
-- Helps verify that gradient descent is working correctly
-- Should show a decreasing trend
 
-### 3. Predictions vs Actual Values
+**What it shows:**
+- How the cost (error) decreases as training progresses
+- X-axis: Iteration number
+- Y-axis: Cost value (MSE)
+
+**Mathematical Foundation:**
+
+The cost function (Mean Squared Error) at each iteration:
+
+```
+J(w, b) = (1/2m) Σ(ŷᵢ - yᵢ)²
+
+Where:
+- J = cost (total error)
+- m = number of training examples
+- ŷᵢ = predicted value for example i
+- yᵢ = actual value for example i
+- Σ = sum over all examples
+```
+
+**Gradient Descent Updates:**
+
+At each iteration, parameters are updated:
+
+```
+w = w - α · (∂J/∂w)
+b = b - α · (∂J/∂b)
+
+Where:
+- α = learning rate
+- ∂J/∂w = gradient with respect to weight
+- ∂J/∂b = gradient with respect to bias
+```
+
+**How to interpret:**
+- **Steep initial drop**: Model is learning quickly
+- **Gradual flattening**: Model is converging
+- **Flat line at end**: Model has converged (optimal parameters found)
+
+**What to look for:**
+✅ **Smooth decrease**: Indicates proper learning  
+✅ **Convergence**: Cost should plateau (stop decreasing)  
+❌ **Oscillations**: Learning rate might be too high  
+❌ **Increasing cost**: Something is wrong (bad learning rate or bug)  
+❌ **No decrease**: Learning rate too small or model can't fit data  
+
+**Troubleshooting:**
+- If cost increases: Reduce learning rate
+- If cost decreases very slowly: Increase learning rate or iterations
+- If cost oscillates: Reduce learning rate
+
+---
+
+### 3. **Predictions vs Actual Values**
+
 ![Predictions vs Actual](visualizations/predictions_vs_actual.png)
-- Compares predicted values to actual values
-- Perfect predictions would lie on the diagonal line
-- Shows the quality of predictions
 
-### 4. Residuals Plot
+**What it shows:**
+- X-axis: Actual values (ground truth)
+- Y-axis: Predicted values (model output)
+- Diagonal line: Perfect prediction line (y = x)
+- Blue dots: Training data
+- Green dots: Test data
+
+**Mathematical Foundation:**
+
+Each point represents:
+
+```
+Point (x, y) where:
+- x = yᵢ (actual value)
+- y = ŷᵢ (predicted value)
+
+Perfect prediction: ŷᵢ = yᵢ (point on diagonal)
+```
+
+**R² Score Calculation:**
+
+```
+R² = 1 - (SS_res / SS_tot)
+
+Where:
+SS_res = Σ(yᵢ - ŷᵢ)²  (residual sum of squares)
+SS_tot = Σ(yᵢ - ȳ)²   (total sum of squares)
+ȳ = mean of actual values
+
+Interpretation:
+- R² = 1.0: Perfect predictions (all points on diagonal)
+- R² = 0.8: Model explains 80% of variance
+- R² = 0.0: Model no better than predicting the mean
+- R² < 0: Model worse than predicting the mean
+```
+
+**How to interpret:**
+- **Points on diagonal**: Perfect predictions
+- **Points above diagonal**: Model over-predicts (ŷ > y)
+- **Points below diagonal**: Model under-predicts (ŷ < y)
+- **Tight cluster**: High accuracy (high R²)
+- **Wide scatter**: Low accuracy (low R²)
+
+**What to look for:**
+✅ **Points close to diagonal**: Good model performance  
+✅ **Similar scatter for training and test**: Good generalization  
+❌ **Systematic bias** (all above or below): Model has bias issue  
+❌ **Training tight, test scattered**: Overfitting  
+❌ **Fan shape**: Heteroscedasticity (variance increases with value)  
+
+---
+
+### 4. **Residuals Plot**
+
 ![Residuals](visualizations/residuals.png)
-- Shows the errors (residuals) for each prediction
-- Should be randomly distributed around zero
-- Patterns indicate model problems
+
+**What it shows:**
+- X-axis: Predicted values (ŷ) or input features (X)
+- Y-axis: Residuals (errors)
+- Horizontal line at y=0: Perfect prediction line
+- Blue dots: Training residuals
+- Green dots: Test residuals
+
+**Mathematical Foundation:**
+
+Residual for each prediction:
+
+```
+Residual = eᵢ = yᵢ - ŷᵢ
+
+Where:
+- eᵢ = error (residual) for example i
+- yᵢ = actual value
+- ŷᵢ = predicted value
+
+Properties of good residuals:
+1. Mean(e) ≈ 0 (unbiased)
+2. Variance(e) = constant (homoscedastic)
+3. e ~ Normal distribution
+4. No patterns or correlations
+```
+
+**Why residuals matter:**
+
+Residuals reveal model assumptions:
+
+```
+Assumptions checked:
+1. Linearity: Random scatter (no curves)
+2. Homoscedasticity: Constant spread
+3. Independence: No patterns
+4. Normality: Bell-shaped distribution
+```
+
+**How to interpret:**
+
+**Residual patterns and their meanings:**
+
+1. **Random scatter around zero** ✅
+   - Model is appropriate
+   - Assumptions are met
+   - Good predictions
+
+2. **Curved pattern** ❌
+   - Non-linear relationship exists
+   - Need polynomial features or different model
+
+3. **Funnel shape** (increasing spread) ❌
+   - Heteroscedasticity
+   - Variance increases with predicted value
+   - Consider log transformation
+
+4. **Systematic bias** (all positive or negative) ❌
+   - Model consistently over/under-predicts
+   - Missing important features
+
+5. **Outliers** (points far from zero) ⚠️
+   - Unusual data points
+   - May need investigation or removal
+
+**What to look for:**
+✅ **Random scatter**: No obvious patterns  
+✅ **Centered at zero**: Mean of residuals ≈ 0  
+✅ **Constant spread**: Similar variance across predictions  
+✅ **Symmetric distribution**: Equal scatter above/below zero  
+
+❌ **Curved patterns**: Indicates non-linearity  
+❌ **Funnel shape**: Heteroscedasticity problem  
+❌ **Clusters or gaps**: Missing variables  
+❌ **Outliers**: Data quality issues  
+
+**Diagnostic actions:**
+
+| Pattern | Problem | Solution |
+|---------|---------|----------|
+| Curve | Non-linear relationship | Add polynomial features |
+| Funnel | Heteroscedasticity | Log transform target |
+| Systematic bias | Missing features | Add more features |
+| Outliers | Data quality | Investigate/remove outliers |
+| Clusters | Categorical variable | Add categorical features |
+
+---
+
+### 5. **Feature Importance (Multiple Linear Regression)**
+
+**What it shows:**
+- Horizontal bar chart of learned weights
+- Green bars: Positive weights (increase target)
+- Red bars: Negative weights (decrease target)
+- Length: Magnitude of impact
+
+**Mathematical Foundation:**
+
+For multiple linear regression:
+
+```
+ŷ = w₁x₁ + w₂x₂ + ... + wₙxₙ + b
+
+Feature importance = |wᵢ|
+
+Where:
+- wᵢ = weight for feature i
+- |wᵢ| = absolute value (magnitude)
+- Larger |wᵢ| = more important feature
+```
+
+**Important Note:**
+
+Weights are only comparable when features are normalized!
+
+```
+Normalized feature: x_norm = (x - mean) / std
+
+After normalization:
+- All features have mean = 0, std = 1
+- Weights directly indicate importance
+```
+
+**How to interpret:**
+- **Large positive weight**: Feature strongly increases target
+- **Large negative weight**: Feature strongly decreases target
+- **Small weight**: Feature has minimal impact
+- **Zero weight**: Feature is irrelevant
+
+**What to look for:**
+✅ Identify most important features  
+✅ Remove features with near-zero weights  
+✅ Understand domain relationships  
+
+---
+
+### 6. **Feature Correlations (Multiple Linear Regression)**
+
+**What it shows:**
+- Multiple scatter plots
+- Each plot: One feature vs target
+- Shows individual feature-target relationships
+
+**Mathematical Foundation:**
+
+Pearson correlation coefficient:
+
+```
+r = Σ[(xᵢ - x̄)(yᵢ - ȳ)] / √[Σ(xᵢ - x̄)² · Σ(yᵢ - ȳ)²]
+
+Where:
+- r = correlation (-1 to +1)
+- x̄ = mean of feature
+- ȳ = mean of target
+
+Interpretation:
+- r = +1: Perfect positive correlation
+- r = 0: No correlation
+- r = -1: Perfect negative correlation
+```
+
+**How to interpret:**
+- **Upward trend**: Positive correlation
+- **Downward trend**: Negative correlation
+- **No trend**: No linear relationship
+- **Tight cluster**: Strong correlation
+- **Wide scatter**: Weak correlation
+
+**What to look for:**
+✅ Strong correlations indicate useful features  
+✅ Non-linear patterns suggest feature engineering  
+❌ No correlation suggests feature might be useless  
+
+---
+
+## 📊 Visualization Summary
+
+| Plot | Purpose | Key Metric | Good Sign |
+|------|---------|------------|-----------|
+| **Best Fit Line** | Show model fit | Visual inspection | Points near line |
+| **Cost History** | Training progress | Decreasing J(w,b) | Smooth decrease |
+| **Predictions vs Actual** | Model accuracy | R² score | Points on diagonal |
+| **Residuals** | Assumption checking | Random scatter | No patterns |
+| **Feature Importance** | Feature selection | Weight magnitude | Clear differences |
+| **Feature Correlations** | Relationship analysis | Correlation r | Strong trends |
+
+---
+
+## 🔍 Using Visualizations for Debugging
+
+**Problem**: Model not learning (cost not decreasing)
+- Check: Cost history plot
+- Solution: Adjust learning rate or increase iterations
+
+**Problem**: Poor predictions
+- Check: Predictions vs Actual plot
+- Solution: Add more features or try non-linear model
+
+**Problem**: Model works on training but not test
+- Check: Compare training vs test in all plots
+- Solution: Reduce overfitting (more data, simpler model)
+
+**Problem**: Predictions biased
+- Check: Residuals plot for systematic patterns
+- Solution: Add missing features or transform data
 
 ---
 
