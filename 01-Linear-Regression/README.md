@@ -696,11 +696,7 @@ Interpretation:
 
 ---
 
-## 🚀 Next Steps
 
-Now that you understand the theory, check out:
-1. **[linear_regression.py](linear_regression.py)** - Clean Python implementation from scratch
-2. **[examples/](examples/)** - Practical examples with real datasets
 
 ### Key Takeaways
 
@@ -713,4 +709,3 @@ Now that you understand the theory, check out:
 
 ---
 
-**Ready to code?** Head over to `linear_regression.py` to see the implementation! 🎉

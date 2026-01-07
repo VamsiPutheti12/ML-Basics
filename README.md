@@ -42,9 +42,14 @@ This repository is organized by algorithm, with each folder containing:
 ```
 ML-Basics/
 ├── 01-Linear-Regression/
-│   ├── README.md
-│   ├── linear_regression.py
-│   └── examples/
+│   ├── README.md                                # Complete theory with math
+│   ├── MULTIPLE_LINEAR_REGRESSION.md            # Multiple features guide
+│   ├── RECENT_DATA_INFO.md                      # Dataset information
+│   ├── linear_regression.py                     # Full class implementation
+│   ├── simple_demo.py                           # Basic 1-feature demo
+│   ├── multiple_linear_regression.py            # 1990 California housing
+│   ├── recent_housing_regression.py             # 2015-2024 housing data
+│   └── visualizations/                          # Auto-generated plots
 ├── 02-Logistic-Regression/ (Coming soon)
 ├── 03-Decision-Trees/ (Coming soon)
 └── ... (More algorithms)
@@ -54,6 +59,12 @@ ML-Basics/
 
 ### ✅ Implemented
 1. **[Linear Regression](01-Linear-Regression/)** - Predicting continuous values
+   - Simple Linear Regression (1 feature)
+   - Multiple Linear Regression (8 features)
+   - Historical dataset (1990 California Housing)
+   - Recent dataset (2015-2024 USA Housing)
+   - Comprehensive visualizations (6 plot types)
+   - Detailed mathematical explanations
 
 ### 🚧 Coming Soon
 2. **Logistic Regression** - Binary classification
@@ -71,7 +82,8 @@ ML-Basics/
 Python 3.7+
 numpy
 matplotlib
-scikit-learn (for comparison and datasets)
+scikit-learn (for datasets)
+pandas (for data manipulation)
 ```
 
 ### Installation
@@ -86,11 +98,20 @@ pip install numpy matplotlib scikit-learn
 
 ### Quick Start
 ```bash
-# Navigate to an algorithm folder
+# Navigate to Linear Regression folder
 cd 01-Linear-Regression
 
-# Run the implementation
+# Option 1: Simple demo (1 feature, 8 data points)
+python simple_demo.py
+
+# Option 2: Full implementation (class-based)
 python linear_regression.py
+
+# Option 3: Multiple features with 1990 California housing data (play a little bit with data if you want!)
+python multiple_linear_regression.py
+
+# Option 4: Recent housing data (2015-2024)
+python recent_housing_regression.py
 ```
 
 ## 🎓 Learning Path
@@ -105,9 +126,11 @@ If you're new to Machine Learning, I recommend following this order:
 ## 💡 Why This Repository?
 
 - **Beginner-Friendly**: Clear explanations without assuming prior ML knowledge
-- **Math Included**: Step-by-step mathematical derivations
-- **Clean Code**: Simple, readable Python implementations
-- **Visual Learning**: Graphs and visualizations for better understanding
+- **Math Included**: Step-by-step mathematical derivations with detailed explanations
+- **Clean Code**: Simple, readable Python implementations from scratch
+- **Visual Learning**: 6+ plot types with mathematical foundations explained
+- **Real-World Data**: Both historical (1990) and recent (2015-2024) datasets
+- **Multiple Examples**: Simple demos to complex multi-feature implementations
 - **Self-Paced**: Learn at your own speed with comprehensive documentation
 
 ## 🤝 Contributing
