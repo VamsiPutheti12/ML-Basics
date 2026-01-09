@@ -24,7 +24,7 @@ pip install streamlit
 
 ### Step 2: Generate Model File
 ```bash
-cd 01-Linear-Regression
+cd 01-Linear-Regression/deploy-housing
 python save_model.py
 ```
 This creates `housing_model.pkl` with your trained weights.
@@ -56,7 +56,7 @@ git push
 ### Step 3: Configure Deployment
 - **Repository**: `VamsiPutheti12/ML-Basics`
 - **Branch**: `main`
-- **Main file path**: `01-Linear-Regression/app.py`
+- **Main file path**: `01-Linear-Regression/deploy-housing/app.py`
 
 ### Step 4: Deploy!
 Click **"Deploy!"** and wait 2-3 minutes.

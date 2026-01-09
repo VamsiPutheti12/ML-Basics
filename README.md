@@ -49,6 +49,9 @@ ML-Basics/
 │   ├── simple_demo.py                           # Basic 1-feature demo
 │   ├── multiple_linear_regression.py            # 1990 California housing
 │   ├── recent_housing_regression.py             # 2015-2024 housing data
+│   ├── deploy-housing/                          # Deployment module
+│   │   ├── app.py                               # Streamlit web app
+│   │   └── save_model.py                        # Model export script
 │   └── visualizations/                          # Auto-generated plots
 ├── 02-Logistic-Regression/ (Coming soon)
 ├── 03-Decision-Trees/ (Coming soon)
