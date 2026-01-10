@@ -49,9 +49,15 @@ ML-Basics/
 │   ├── simple_demo.py                           # Basic 1-feature demo
 │   ├── multiple_linear_regression.py            # 1990 California housing
 │   ├── recent_housing_regression.py             # 2015-2024 housing data
-│   ├── deploy-housing/                          # Deployment module
-│   │   ├── app.py                               # Streamlit web app
+│   ├── deploy-housing/                          # Streamlit deployment
+│   │   ├── app.py                               # Web app for predictions
 │   │   └── save_model.py                        # Model export script
+│   ├── polynomial-semen-quality-project/        # Polynomial regression
+│   │   ├── README.md                            # Detailed variable explanations
+│   │   ├── polynomial_regression.py             # Polynomial class from scratch
+│   │   ├── fertility_analysis.py                # UCI dataset analysis
+│   │   ├── coefficient_interpretation.py        # Clinical examples
+│   │   └── visualizations/                      # Generated plots
 │   └── visualizations/                          # Auto-generated plots
 ├── 02-Logistic-Regression/ (Coming soon)
 ├── 03-Decision-Trees/ (Coming soon)
@@ -66,6 +72,8 @@ ML-Basics/
    - Multiple Linear Regression (8 features)
    - Historical dataset (1990 California Housing)
    - Recent dataset (2015-2024 USA Housing)
+   - **Polynomial Regression** (capturing non-linear relationships)
+   - Streamlit web app deployment
    - Comprehensive visualizations (6 plot types)
    - Detailed mathematical explanations
 
@@ -87,6 +95,8 @@ numpy
 matplotlib
 scikit-learn (for datasets)
 pandas (for data manipulation)
+seaborn (for visualizations)
+streamlit (for web app deployment)
 ```
 
 ### Installation
@@ -110,11 +120,15 @@ python simple_demo.py
 # Option 2: Full implementation (class-based)
 python linear_regression.py
 
-# Option 3: Multiple features with 1990 California housing data (play a little bit with data if you want!)
+# Option 3: Multiple features with 1990 California housing data
 python multiple_linear_regression.py
 
 # Option 4: Recent housing data (2015-2024)
 python recent_housing_regression.py
+
+# Option 5: Polynomial regression (semen quality analysis)
+cd polynomial-semen-quality-project
+python fertility_analysis.py
 ```
 
 ## 🎓 Learning Path
