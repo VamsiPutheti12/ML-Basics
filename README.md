@@ -1,8 +1,8 @@
-# 🤖 ML-Basics: A Beginner's Journey Through Machine Learning
+# ML-Basics: A Beginner's Journey Through Machine Learning
 
 Welcome to **ML-Basics**! This repository is a comprehensive guide to understanding Machine Learning algorithms from the ground up. Each algorithm includes detailed theory, mathematical foundations, and clean Python implementations.
 
-## 📚 What is Machine Learning?
+## What is Machine Learning?
 
 **Machine Learning (ML)** is a subset of Artificial Intelligence that enables computers to learn from data and make predictions or decisions without being explicitly programmed for every scenario.
 
@@ -15,29 +15,22 @@ Instead of writing specific rules, we:
 
 ### Types of Machine Learning
 
-![Linear Regression Concept](C:/Users/DELL/.gemini/antigravity/brain/b5e1084d-3190-44c2-a558-f297cc6399ef/linear_regression_concept_1766630094709.png)
-
-**1. Supervised Learning** 📊
+**1. Supervised Learning**
 - Learn from labeled data (input-output pairs)
 - Examples: Linear Regression, Logistic Regression, Decision Trees
 - Use cases: Price prediction, spam detection, image classification
 
-**2. Unsupervised Learning** 🔍
+**2. Unsupervised Learning**
 - Find patterns in unlabeled data
 - Examples: K-Means Clustering, PCA
 - Use cases: Customer segmentation, anomaly detection
 
-**3. Reinforcement Learning** 🎮
+**3. Reinforcement Learning**
 - Learn through trial and error with rewards/penalties
 - Examples: Q-Learning, Deep Q-Networks
 - Use cases: Game AI, robotics, recommendation systems
 
-## 🎯 Repository Structure
-
-This repository is organized by algorithm, with each folder containing:
-- **README.md**: Complete theory with mathematical explanations
-- **Implementation**: Clean, commented Python code
-- **Examples**: Practical demonstrations with visualizations
+## Repository Structure
 
 ```
 ML-Basics/
@@ -64,7 +57,7 @@ ML-Basics/
 └── ... (More algorithms)
 ```
 
-## 📖 Algorithms Covered
+## Algorithms Covered
 
 ### ✅ Implemented
 1. **[Linear Regression](01-Linear-Regression/)** - Predicting continuous values
@@ -74,8 +67,7 @@ ML-Basics/
    - Recent dataset (2015-2024 USA Housing)
    - **Polynomial Regression** (capturing non-linear relationships)
    - Streamlit web app deployment
-   - Comprehensive visualizations (6 plot types)
-   - Detailed mathematical explanations
+   - Comprehensive visualizations
 
 ### 🚧 Coming Soon
 2. **Logistic Regression** - Binary classification
@@ -140,15 +132,6 @@ If you're new to Machine Learning, I recommend following this order:
 3. **Explore Decision Trees** - Understand non-linear models
 4. **Dive into Neural Networks** - Foundation for deep learning
 
-## 💡 Why This Repository?
-
-- **Beginner-Friendly**: Clear explanations without assuming prior ML knowledge
-- **Math Included**: Step-by-step mathematical derivations with detailed explanations
-- **Clean Code**: Simple, readable Python implementations from scratch
-- **Visual Learning**: 6+ plot types with mathematical foundations explained
-- **Real-World Data**: Both historical (1990) and recent (2015-2024) datasets
-- **Multiple Examples**: Simple demos to complex multi-feature implementations
-- **Self-Paced**: Learn at your own speed with comprehensive documentation
 
 ## 🤝 Contributing
 
@@ -164,7 +147,7 @@ This project is open source and available for educational purposes.
 
 ## 🌟 Acknowledgments
 
-This repository is created as a learning journey through Machine Learning fundamentals. Special thanks to the ML community for their excellent resources and tutorials.
+This repository is created as a learning journey through Machine Learning fundamentals.
 
 ---
 
