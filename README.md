@@ -37,22 +37,21 @@ ML-Basics/
 ├── 01-Linear-Regression/
 │   ├── README.md                                # Complete theory with math
 │   ├── MULTIPLE_LINEAR_REGRESSION.md            # Multiple features guide
-│   ├── RECENT_DATA_INFO.md                      # Dataset information
 │   ├── linear_regression.py                     # Full class implementation
 │   ├── simple_demo.py                           # Basic 1-feature demo
 │   ├── multiple_linear_regression.py            # 1990 California housing
 │   ├── recent_housing_regression.py             # 2015-2024 housing data
 │   ├── deploy-housing/                          # Streamlit deployment
-│   │   ├── app.py                               # Web app for predictions
-│   │   └── save_model.py                        # Model export script
-│   ├── polynomial-semen-quality-project/        # Polynomial regression
-│   │   ├── README.md                            # Detailed variable explanations
-│   │   ├── polynomial_regression.py             # Polynomial class from scratch
-│   │   ├── fertility_analysis.py                # UCI dataset analysis
-│   │   ├── coefficient_interpretation.py        # Clinical examples
-│   │   └── visualizations/                      # Generated plots
-│   └── visualizations/                          # Auto-generated plots
-├── 02-Logistic-Regression/ (Coming soon)
+│   └── polynomial-semen-quality-project/        # Polynomial regression
+│
+├── 02-Logistic-Regression/
+│   ├── README.md                                # Complete theory with math
+│   ├── simple_demo.py                           # Basic binary classification
+│   ├── cancer_prediction.py                     # Breast cancer classification
+│   ├── multiclass_iris.py                       # Softmax regression (3 classes)
+│   ├── evaluation_metrics.py                    # ROC, AUC, F1-Score
+│   └── sklearn_comparison.py                    # Scratch vs sklearn validation
+│
 ├── 03-Decision-Trees/ (Coming soon)
 └── ... (More algorithms)
 ```
@@ -60,6 +59,7 @@ ML-Basics/
 ## Algorithms Covered
 
 ### ✅ Implemented
+
 1. **[Linear Regression](01-Linear-Regression/)** - Predicting continuous values
    - Simple Linear Regression (1 feature)
    - Multiple Linear Regression (8 features)
@@ -69,8 +69,15 @@ ML-Basics/
    - Streamlit web app deployment
    - Comprehensive visualizations
 
+2. **[Logistic Regression](02-Logistic-Regression/)** - Binary & multiclass classification
+   - Simple binary classification (pass/fail demo)
+   - Cancer prediction (malignant vs benign)
+   - **Multiclass classification** with Softmax (Iris dataset)
+   - **Evaluation metrics**: ROC Curve, AUC, Precision, Recall, F1-Score
+   - Sklearn comparison to validate implementation
+   - Complete math documentation (sigmoid, cross-entropy, gradients)
+
 ### 🚧 Coming Soon
-2. **Logistic Regression** - Binary classification
 3. **Decision Trees** - Tree-based decisions
 4. **K-Nearest Neighbors** - Instance-based learning
 5. **Support Vector Machines** - Maximum margin classification
@@ -98,29 +105,24 @@ git clone https://github.com/VamsiPutheti12/ML-Basics.git
 cd ML-Basics
 
 # Install dependencies
-pip install numpy matplotlib scikit-learn
+pip install numpy matplotlib scikit-learn pandas seaborn
 ```
 
 ### Quick Start
 ```bash
-# Navigate to Linear Regression folder
+# Linear Regression demos
 cd 01-Linear-Regression
-
-# Option 1: Simple demo (1 feature, 8 data points)
 python simple_demo.py
-
-# Option 2: Full implementation (class-based)
 python linear_regression.py
-
-# Option 3: Multiple features with 1990 California housing data
 python multiple_linear_regression.py
 
-# Option 4: Recent housing data (2015-2024)
-python recent_housing_regression.py
-
-# Option 5: Polynomial regression (semen quality analysis)
-cd polynomial-semen-quality-project
-python fertility_analysis.py
+# Logistic Regression demos
+cd ../02-Logistic-Regression
+python simple_demo.py
+python cancer_prediction.py
+python multiclass_iris.py
+python evaluation_metrics.py
+python sklearn_comparison.py
 ```
 
 ## 🎓 Learning Path
