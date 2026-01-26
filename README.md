@@ -52,7 +52,16 @@ ML-Basics/
 │   ├── evaluation_metrics.py                    # ROC, AUC, F1-Score
 │   └── sklearn_comparison.py                    # Scratch vs sklearn validation
 │
-├── 03-Decision-Trees/ (Coming soon)
+├── 03-Regularization/
+│   ├── README.md                                # Complete theory with math
+│   ├── underfitting_demo.py                     # Linear on quadratic data
+│   ├── overfitting_demo.py                      # Polynomial degree comparison
+│   ├── ridge_regression.py                      # L2 regularization
+│   ├── lasso_regression.py                      # L1 regularization
+│   ├── elastic_net.py                           # L1 + L2 combined
+│   └── regularization_comparison.py             # Side-by-side comparison
+│
+├── 04-Decision-Trees/ (Coming soon)
 └── ... (More algorithms)
 ```
 
@@ -77,9 +86,17 @@ ML-Basics/
    - Sklearn comparison to validate implementation
    - Complete math documentation (sigmoid, cross-entropy, gradients)
 
+3. **[Regularization](03-Regularization/)** - Preventing overfitting
+   - Underfitting vs Overfitting demos
+   - **Ridge Regression (L2)**: Weight shrinkage
+   - **Lasso Regression (L1)**: Feature selection
+   - **Elastic Net**: L1 + L2 combined
+   - Bias-variance tradeoff visualization
+   - Complete math documentation
+
 ### 🚧 Coming Soon
-3. **Decision Trees** - Tree-based decisions
-4. **K-Nearest Neighbors** - Instance-based learning
+4. **Decision Trees** - Tree-based decisions
+5. **K-Nearest Neighbors** - Instance-based learning
 5. **Support Vector Machines** - Maximum margin classification
 6. **Neural Networks** - Deep learning basics
 7. **K-Means Clustering** - Unsupervised clustering
