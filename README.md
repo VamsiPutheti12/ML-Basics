@@ -97,10 +97,10 @@ ML-Basics/
 ### 🚧 Coming Soon
 4. **Decision Trees** - Tree-based decisions
 5. **K-Nearest Neighbors** - Instance-based learning
-5. **Support Vector Machines** - Maximum margin classification
-6. **Neural Networks** - Deep learning basics
-7. **K-Means Clustering** - Unsupervised clustering
-8. **Principal Component Analysis (PCA)** - Dimensionality reduction
+6. **Support Vector Machines** - Maximum margin classification
+7. **Neural Networks** - Deep learning basics
+8. **K-Means Clustering** - Unsupervised clustering
+9. **Principal Component Analysis (PCA)** - Dimensionality reduction
 
 ## 🚀 Getting Started
 
@@ -139,7 +139,14 @@ python simple_demo.py
 python cancer_prediction.py
 python multiclass_iris.py
 python evaluation_metrics.py
-python sklearn_comparison.py
+
+# Regularization demos
+cd ../03-Regularization
+python underfitting_demo.py
+python overfitting_demo.py
+python ridge_regression.py
+python lasso_regression.py
+python regularization_comparison.py
 ```
 
 ## 🎓 Learning Path
@@ -148,8 +155,9 @@ If you're new to Machine Learning, I recommend following this order:
 
 1. **Start with Linear Regression** - Understand the basics of supervised learning
 2. **Move to Logistic Regression** - Learn classification
-3. **Explore Decision Trees** - Understand non-linear models
-4. **Dive into Neural Networks** - Foundation for deep learning
+3. **Learn Regularization** - Prevent overfitting with L1/L2
+4. **Explore Decision Trees** - Understand non-linear models
+5. **Dive into Neural Networks** - Foundation for deep learning
 
 
 ## 🤝 Contributing
